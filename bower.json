@@ -1,0 +1,6 @@
+{
+  "name": "books-ember",
+  "dependencies": {
+    "typeahead.js": "^0.11.1"
+  }
+}
