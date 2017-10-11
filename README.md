@@ -3,7 +3,7 @@
 ## Known issues/ Bugs
 
 
-* loading icon on first page load
+* loading icon on first page load and once a book is selected
 * set default radio button
 * get custom cell template to work
 * fix styling on details
