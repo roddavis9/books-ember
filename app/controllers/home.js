@@ -95,7 +95,7 @@ export default Ember.Controller.extend({
     },
     updateSelected: function(selectedValue) {
       const self = this;
-      // this.set('selectedBook', selectedValue);
+
       var currentSearchCriteria = this.get('searchCriteria');
 
       let bookISBN = bookList.find(function (book) {
@@ -116,12 +116,12 @@ export default Ember.Controller.extend({
       });
 
       Ember.run.later((function() {
-        console.log('yes', bookData);
+        console.log('bookData', bookData);
 
-        console.log('detail', bookData.items[0].volumeInfo.imageLinks.thumbnail);
         // set variables for book details
         // TODO: this is an array so loop through and get all. Now just displaying first
         self.set('detailAuthor', bookData.items[0].volumeInfo.authors[0]);
+
         self.set('detailTitle', bookData.items[0].volumeInfo.title);
         self.set('detailDescription', bookData.items[0].volumeInfo.description);
         self.set('detailCover', bookData.items[0].volumeInfo.imageLinks.thumbnail);
@@ -130,10 +130,6 @@ export default Ember.Controller.extend({
         self.set('detailDescription', bookData.items[0].volumeInfo.description);
 
       }), 1000);
-
-
-
-
 
       this.set('showModal', true);
 
