@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e140ffb7-39f7-4018-bcf2-e4ecaf5e36a3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home.js" afterPath="$PROJECT_DIR$/app/controllers/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/books-ember.js" afterPath="$PROJECT_DIR$/dist/assets/books-ember.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/books-ember.map" afterPath="$PROJECT_DIR$/dist/assets/books-ember.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/tests.js" afterPath="$PROJECT_DIR$/dist/assets/tests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/tests.map" afterPath="$PROJECT_DIR$/dist/assets/tests.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/tests/index.html" afterPath="$PROJECT_DIR$/dist/tests/index.html" />
     </list>
@@ -21,17 +22,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="111" column="8" lean-forward="false" selection-start-line="111" selection-start-column="8" selection-end-line="111" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -159,10 +160,10 @@
         <option value="$PROJECT_DIR$/app/styles/app.css" />
         <option value="$PROJECT_DIR$/app/templates/components/simple-modal.hbs" />
         <option value="$PROJECT_DIR$/app/components/simple-modal.js" />
-        <option value="$PROJECT_DIR$/app/controllers/home.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/templates/home.hbs" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/app/controllers/home.js" />
       </list>
     </option>
   </component>
@@ -218,11 +219,6 @@
             <path>
               <item name="books-ember" type="b2602c69:ProjectViewProjectNode" />
               <item name="books-ember" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="books-ember" type="b2602c69:ProjectViewProjectNode" />
-              <item name="books-ember" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -271,12 +267,12 @@
       <workItem from="1507468361782" duration="5558000" />
       <workItem from="1507494221104" duration="56804000" />
       <workItem from="1507650203228" duration="15220000" />
-      <workItem from="1507733764876" duration="2011000" />
+      <workItem from="1507733764876" duration="2732000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90638000" />
+    <option name="totallyTimeSpent" value="91359000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="114" y="23" width="1719" height="977" extended-state="0" />
@@ -616,14 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/home.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920">
@@ -644,6 +632,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="111" column="8" lean-forward="false" selection-start-line="111" selection-start-column="8" selection-end-line="111" selection-end-column="8" />
           <folding />
         </state>
       </provider>

@@ -1469,8 +1469,8 @@ define('books-ember/controllers/home', ['exports'], function (exports) {
           return selectedValue === book[currentSearchCriteria];
         });
 
-        console.log('isbn', bookISBN);
-        console.log(selectedValue);
+        //console.log('isbn', bookISBN);
+        //console.log(selectedValue);
 
         //let displayedBookData = this.get('bookData').getBookData(bookISBN.isbn);
         var API_KEY = 'AIzaSyDy2qNUaUwGP4okrPnaWsXsSqL2fyUHzDQ';
@@ -2887,6 +2887,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("books-ember/app")["default"].create({"name":"books-ember","version":"0.0.0+303346b2"});
+  require("books-ember/app")["default"].create({"name":"books-ember","version":"0.0.0+498b7685"});
 }
 //# sourceMappingURL=books-ember.map

@@ -32,7 +32,7 @@ define('books-ember/tests/app.lint-test', [], function () {
 
   QUnit.test('controllers/home.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'controllers/home.js should pass ESLint\n\n106:7 - Unexpected console statement. (no-console)\n107:7 - Unexpected console statement. (no-console)\n119:9 - Unexpected console statement. (no-console)');
+    assert.ok(false, 'controllers/home.js should pass ESLint\n\n119:9 - Unexpected console statement. (no-console)');
   });
 
   QUnit.test('controllers/quick-search.js', function (assert) {

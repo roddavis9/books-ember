@@ -103,8 +103,8 @@ export default Ember.Controller.extend({
         return selectedValue === book[currentSearchCriteria];
       });
 
-      console.log('isbn', bookISBN);
-      console.log(selectedValue);
+      //console.log('isbn', bookISBN);
+      //console.log(selectedValue);
 
       //let displayedBookData = this.get('bookData').getBookData(bookISBN.isbn);
       const API_KEY = 'AIzaSyDy2qNUaUwGP4okrPnaWsXsSqL2fyUHzDQ';
