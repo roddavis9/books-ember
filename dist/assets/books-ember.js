@@ -2887,6 +2887,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("books-ember/app")["default"].create({"name":"books-ember","version":"0.0.0+c4a9ac69"});
+  require("books-ember/app")["default"].create({"name":"books-ember","version":"0.0.0+a8c5a76b"});
 }
 //# sourceMappingURL=books-ember.map
