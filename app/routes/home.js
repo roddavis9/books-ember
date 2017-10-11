@@ -5,7 +5,7 @@ export default Ember.Route.extend({
 
   model: function() {
 
-    return this.get('store').findAll('book');
+    //return this.get('store').findAll('book');
 
 
 
@@ -30,9 +30,9 @@ export default Ember.Route.extend({
 
 
 
-    //return Ember.$.getJSON('https://skookum-test-api.herokuapp.com/api/v1/books').then(function(data) {
-    //  return data;
-    //})
+    return Ember.$.getJSON('https://skookum-test-api.herokuapp.com/api/v1/books').then(function(data) {
+      return data;
+    })
 
   }
 

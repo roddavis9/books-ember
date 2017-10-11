@@ -1,20 +1,27 @@
 import Ember from 'ember';
 
+
 let bookList = [];
-let bookOptionsArray = [];
 let bookArray = [];
-let booksModel;
 let bookData = {};
-const API_KEY = 'AIzaSyDy2qNUaUwGP4okrPnaWsXsSqL2fyUHzDQ';
+
 
 export default Ember.Controller.extend({
+  bookData: Ember.inject.service(),
   searchCriteria : null,
   bookList: null,
   selectedBook : null,
+// detail variables
+  detailAuthor: '',
+  detailTitle: '',
+  detailDescription: '',
+  detailCover: '',
+  detailISBN: '',
+  detailYear: '',
   columns: [
     {
-      "title": "View Details",
-      "template": "/custom/booklink"
+      "template": "",
+      "title": "View Details"
     },
     {
       "propertyName": "title",
@@ -37,17 +44,18 @@ export default Ember.Controller.extend({
   ],
 
 
+
+
+
   init: function () {
     this._super(...arguments);
     this.set('searchCriteria', 'title');
     this.set('bookList', bookList);
     this.set('selectedBook', '');
 
-    booksModel = Ember.$.getJSON('https://skookum-test-api.herokuapp.com/api/v1/books').then(function(data) {
+    Ember.$.getJSON('https://skookum-test-api.herokuapp.com/api/v1/books').then(function(data) {
       return bookList = data;
-
     });
-    console.log(booksModel);
 
     this.createBookList();
 
@@ -65,20 +73,19 @@ export default Ember.Controller.extend({
   },
   createBookList() {
     Ember.run.later((function() {
-      bookOptionsArray = bookList.data.map(item => (
-          item.attributes
-      ));
-
-      bookList = Ember.A(bookOptionsArray);
-
+      bookList = Ember.A(bookList);
       bookArray = bookList.map(item => (
         item.title
       ));
 
     }), 2500);
   },
+  showModal: false,
 
   actions: {
+    toggleModal: function() {
+      this.toggleProperty('showModal');
+    },
     changeSearchCriteria: function(value) {
       this.set('searchCriteria', value);
       bookArray = bookList.map(item => (
@@ -86,14 +93,10 @@ export default Ember.Controller.extend({
       ));
 
     },
-    getBookData() {
-
-    },
     updateSelected: function(selectedValue) {
+      const self = this;
       // this.set('selectedBook', selectedValue);
       var currentSearchCriteria = this.get('searchCriteria');
-
-      console.log(currentSearchCriteria);
 
       let bookISBN = bookList.find(function (book) {
         //console.log('selectedValue ', selectedValue, 'book ', currentSearchCriteria);
@@ -103,15 +106,37 @@ export default Ember.Controller.extend({
       console.log('isbn', bookISBN);
       console.log(selectedValue);
 
+      //let displayedBookData = this.get('bookData').getBookData(bookISBN.isbn);
+      const API_KEY = 'AIzaSyDy2qNUaUwGP4okrPnaWsXsSqL2fyUHzDQ';
+
       let bookInfoPath = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + bookISBN.isbn + '&key=' + API_KEY;
-
-      console.log(bookInfoPath);
-
 
       Ember.$.getJSON(bookInfoPath).then(function(data) {
         return bookData = data;
-
       });
+
+      Ember.run.later((function() {
+        console.log('yes', bookData);
+
+        console.log('detail', bookData.items[0].volumeInfo.imageLinks.thumbnail);
+        // set variables for book details
+        // TODO: this is an array so loop through and get all. Now just displaying first
+        self.set('detailAuthor', bookData.items[0].volumeInfo.authors[0]);
+        self.set('detailTitle', bookData.items[0].volumeInfo.title);
+        self.set('detailDescription', bookData.items[0].volumeInfo.description);
+        self.set('detailCover', bookData.items[0].volumeInfo.imageLinks.thumbnail);
+        self.set('detailISBN', bookISBN.isbn);
+        self.set('detailDate', bookData.items[0].volumeInfo.publishedDate);
+        self.set('detailDescription', bookData.items[0].volumeInfo.description);
+
+      }), 1000);
+
+
+
+
+
+      this.set('showModal', true);
+
     }
   }
 

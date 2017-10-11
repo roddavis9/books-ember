@@ -118,15 +118,45 @@
 
 
     </div>
-    <div class="row border-bottom white-bg dashboard-header">
+    <div class="row border-bottom white-bg dashboard-header" style="min-height:500px;">
 
-      <div class="col-md-12 col-sm12">
-        {{models-table
-          data=model
-          columns=columns
-          viewBook='viewBookDdetails'}}
+
+
+{{#if showModal}}
+  <div class="row text-center">
+    <button {{action 'toggleModal'}}>Close Details</button>
+  </div>
+  <div class="row" style="padding:50px;border:1px solid #000;">
+    <div class="col-md-12 col-sm-12">
+      <div class="col-md-5 col-sm-5">
+        <img src={{detailCover}} />
       </div>
+      <div class="col-md-7 col-sm-7 text-left">
+        <div class="row">
+          <h2>{{detailAuthor}}</h2>
+        </div>
+        <div class="row">
+          <h3>Description: {{detailDescription}}</h3>
+        </div>
+        <div class="row">
+          <h3>Published date: {{detailDate}}</h3>
+        </div>
+        <div class="row">
+          <h3>ISBN: {{detailISBN}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
 
+{{else}}
+  <div class="col-md-12 col-sm-12" >
+    {{models-table
+      data=model
+      columns=columns
+      viewBook='viewBookDdetails'}}
+  </div>
+
+{{/if}}
 
     </div>
 
